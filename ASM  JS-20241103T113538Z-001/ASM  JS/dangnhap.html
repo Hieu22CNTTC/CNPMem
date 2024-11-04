@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        padding:0;
+        margin:0 auto;
+        width:500px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+    input{
+        width:500px;
+        height:30px;
+        margin:5px;
+    }
+    button{
+        width:300px;
+        height:40px;
+        background-color: rgb(3, 3, 3);
+        color:beige;
+        font-size:medium;
+        border-radius: 5px;
+        margin-left: 100px;
+        margin-top:10px;
+    }
+    header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #fff;
+    transition: all .5s;
+    width: 100%;
+    background-color: wheat;
+    margin: 0 auto;
+    padding: 0px;
+}
+header.fixed {
+    width: 100%;
+    background-color: wheat;
+    color: black;
+    box-shadow: 0 0 8px gray;
+}
+header.fixed a{
+    color: black;
+    
+}
+header.fixed .login a{
+    border: 2px solid black;
+}
+header.fixed nav ul li a{
+    color: black;
+    
+
+}
+nav{
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo img{
+    width: 200px;
+    display: block;
+}
+.main-menu ul li{
+    display: inline-block;
+    padding: 0 20px;
+}
+.main-menu ul li a:hover{
+    text-decoration: underline;
+    transition: 0.5s;
+
+}
+.main-menu ul a{
+    text-transform:uppercase ;
+    color: black;
+    font-weight: bold;
+}
+.login a{
+    background-color: #c8070f;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 30px;
+    border: 2px solid black;
+    border-radius: 999px;
+    font-size: 18px;
+    transition: .3s;
+}
+.login a:hover{
+    background-color: olive;
+    color: white;
+}
+.main-menu>.ul1>li:hover>.ul2{
+    display: block;
+}
+.main-menu .ul1 .ul2 {
+    position: absolute;
+    display: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    /* border-radius: 5px; */
+    width: 200px;
+    background-color: rgb(191, 194, 197);
+    box-shadow: 0 0 1 white;
+    text-align: center;
+}
+.main-menu .ul1 .ul2 a:hover{
+    
+    color:black;
+}
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="boxform">
+            <h2>ĐĂNG NHẬP</h2>
+            <input type="text" name="" placeholder="nhập tên đăng nhập" id="user"><br>
+            <input type="password" name="" placeholder="nhập mật khẩu" id="pass"><br>
+            <button onclick="return checkform()">đăng nhập</button>
+        </div>
+        <div id="showkq">
+            
+        </div>
+    </div>
+    <script>
+        function checkform() {
+            var user = document.getElementById("user");
+            var pass = document.getElementById("pass");
+            if(user.value !=""){
+                if(user.value.length < 8){
+                    alert("vui lòng nhập >8 ký tự");
+                    user.focus();
+                    return false;
+                }
+            }else{
+                alert("vui lòng nhập tên đăng nhập");
+                user.focus();
+                return false;
+            }
+            if(pass.value !=""){
+                if(pass.value.length < 8){
+                    alert("vui lòng nhập mật khẩu >8 ký tự");
+                    pass.focus();
+                    return false;
+                }
+            }else{
+                alert("vui lòng nhập mật khẩu");
+                pass.focus();
+                return false;
+            }
+            var kq = `<h2>đăng nhập thành công</h2>
+            <p>tên đăng nhập:<span>`+user.value+`</span></p>
+            <p>mật khẩu:<span>`+pass.value+`</span></p>`
+            document.getElementById('showkq').innerHTML = kq;
+            return true;
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Obin Coffee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/logo.png">
+</head>
+
+<header onload="loadslsp()">
+    <div class="inner-header container">
+        <nav>
+            <img src="img/logo.png" alt="" width="80">
+            <div class="logo">
+                <a href="index.html"><img src="img/logoobin.png"  alt=""></a>
+            </div>
+            <div class="main-menu">
+                <ul class="ul1">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li>
+                        <a href="cafe.html">Cà Phê</a>
+                    </li>
+                    <li>
+                        <a href="tra.html">Trà</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="login">
+                <a  href="login.html">Đăng nhập</a>
+                <a  href="signin.html">Đăng ký</a>
+            </div>
+        </nav>
+    </div>
+</header>
+<body onload="showcart()">
+    <div class="containerfull padd20">
+        <div class="container2 ">
+            <div class="box3">154 cửa hàng khắp cả nước</div>
+            <div class="box3">Hotline: 1800 6936</div>
+            <div class="box3">Freeship từ 50.000 đ</div>
+        </div>
+    </div> 
+    <div class="boxcenter">
+        <section class="row">
+            <h1>Giỏ Hàng</h1>
+                <div class="container"></div>
+                    <div class="cart-left">
+                        <table>
+                            <tr>
+                                <th>Hình</th>
+                                <th>Tên Sản Phẩm</th>
+                                <th>Giá</th>
+                                <th>Số Lượng</th>
+                                <th>Thành Tiền</th>
+                                <th>Xóa</th>
+                            </tr>
+                            <tbody id="thongtingiohang"></tbody>
+                            </tbody>
+                        </table>
+                        <br>
+                        <button onclick="delcart()">Xóa tất cả</button>
+                    </div>
+        </section>
+    </div>
+       
+    
+    <footer>
+    </footer>
+    <script> 
+        var arrhinh=["banner1.webp","banner2.webp","banner3.webp","banner4.webp"]
+        setInterval(loadimg,2700);
+        function loadimg(){
+            var i=document.getElementById("img").alt;
+            i++;
+            if(i==parseInt(arrhinh.length - 1)){
+                i=0;
+            }
+            document.getElementById("img").src="img/"+arrhinh[i];
+            document.getElementById("img").alt=i;
+        }
+    </script>
+    <script src="cart.js"></script>
+    <!-- Thêm vào cuối bảng trong cart.html -->
+<button onclick="window.location.href='checkout.html'">Thanh toán</button>
+
+
+</body>
+
+</html>

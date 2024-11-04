@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh toán</title>
+    <link rel="stylesheet" href="checkout.css"> <!-- Sử dụng CSS thanh toán -->
+</head>
+<body>
+<div class="boxcenter">
+    <h1 class="title">Thông tin thanh toán</h1>
+    
+    <!-- Thông tin giỏ hàng -->
+    <table>
+        <thead>
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng</th>
+            </tr>
+        </thead>
+        <tbody id="checkoutCart">
+            <!-- Thông tin giỏ hàng sẽ được hiển thị ở đây -->
+        </tbody>
+    </table>
+
+    <!-- Thông tin giao hàng -->
+    <h2>Thông tin giao hàng</h2>
+    <form id="checkoutForm">
+        <label for="name">Họ tên:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="address">Địa chỉ:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="phone">Số điện thoại:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <h2>Phương thức thanh toán</h2>
+        <label><input type="radio" name="payment" value="COD" checked> Thanh toán khi nhận hàng (COD)</label><br>
+        <label><input type="radio" name="payment" value="bank"> Chuyển khoản ngân hàng</label><br>
+        
+        <button type="submit">Xác nhận thanh toán</button>
+    </form>
+</div>
+
+<script src="checkout.js"></script>
+</body>
+</html>
